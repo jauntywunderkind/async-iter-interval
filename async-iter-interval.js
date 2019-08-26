@@ -2,7 +2,7 @@
 
 import AsyncIterPipe from "async-iter-pipe"
 
-class AsyncIterPeriodicInterval extends AsyncIterPipe{
+export class AsyncIterInterval extends AsyncIterPipe{
 	constructor( ms, opts){
 		super( opts)
 		this.tick= this.produce.bind( this, null)
@@ -16,4 +16,10 @@ class AsyncIterPeriodicInterval extends AsyncIterPipe{
 		clearInterval( this.interval)
 		super.throw( value)
 	}
+}
+export {
+	AsyncIterInterval as default,
+	AsyncIterInterval as asyncIterInterval,
+	AsyncIterInterval as Interval,
+	AsyncIterInterval as interval
 }
