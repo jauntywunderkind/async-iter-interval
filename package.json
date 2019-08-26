@@ -1,0 +1,22 @@
+{
+	"name": "async-iter-interval",
+	"version": "1.0.0",
+	"description": "an async-generator for setInterval",
+	"main": "async-iter-interval.js",
+	"scripts": {
+		"test": "node -r esm .test"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://archive.eldergods.com/async-iter-interval"
+	},
+	"keywords": [],
+	"author": "jauntywunderkind",
+	"license": "MIT",
+	"module": "async-iter-interval.js",
+	"esm": true,
+	"devDependencies": {
+		"esm": "^3.2.25",
+		"tape": "^4.11.0"
+	}
+}
