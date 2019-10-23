@@ -6,14 +6,30 @@ export class AsyncIterInterval extends AsyncIterPipe{
 	constructor( ms, opts){
 		super( opts)
 		this.tick= this.produce.bind( this, null)
-		this.interval= setInterval( this.tick, ms)
+		if( !opts|| opts.start!== false){
+			this.setInterval()
+		}
+	}
+	setInterval(){
+		if( this.interval){ // hi ho hello implicit state machine
+			return
+		}
+		this.interval= setInterval( this.tick, this.ms)
+		return this
+	}
+	clearInterval(){
+		if( this.interval){
+			clearInterval( this.interval)
+		}
+		this.interval= null
+		return this
 	}
 	async return( value){
-		clearInterval( this.interval)
+		this.clearInterval()
 		return super.return( value)
 	}
 	async throw( err){
-		clearInterval( this.interval)
+		this.clearInterval()
 		super.throw( value)
 	}
 }
