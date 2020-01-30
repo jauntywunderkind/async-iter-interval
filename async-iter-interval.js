@@ -6,7 +6,7 @@ export class AsyncIterInterval extends AsyncIterPipe{
 	constructor( ms, opts){
 		super( opts)
 		this.ms= ms
-		this.tick= this.produce.bind( this, null)
+		this.tick= this.push.bind( this, null)
 		if( !opts|| opts.start!== false){
 			this.setInterval()
 		}
