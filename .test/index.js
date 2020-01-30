@@ -1,7 +1,8 @@
+#!/usr/bin/env node
 "use module"
-import AsyncIterInterval from ".."
 import delay from "delay"
 import tape from "tape"
+import AsyncIterInterval from "../async-iter-interval.js"
 
 const
   TIMEBASE= 30,
