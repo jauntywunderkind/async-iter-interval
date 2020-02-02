@@ -21,9 +21,9 @@ export class AsyncIterInterval extends AsyncIterPipe{
 		this.interval= setInterval( this.tick, this.ms)
 		return this
 	}
-	end(){
+	_end(){
 		this.clearInterval()
-		return super.end()
+		return super._end()
 	}
 	clearInterval(){
 		if( this.interval){
@@ -31,14 +31,6 @@ export class AsyncIterInterval extends AsyncIterPipe{
 			this.interval= null
 		}
 		return this
-	}
-	async return( value){
-		this.clearInterval()
-		return super.return( value)
-	}
-	async throw( err){
-		this.clearInterval()
-		super.throw( value)
 	}
 }
 export {

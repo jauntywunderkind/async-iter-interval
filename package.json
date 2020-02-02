@@ -1,6 +1,6 @@
 {
 	"name": "async-iter-interval",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "an async-generator for setInterval",
 	"main": "async-iter-interval.js",
 	"scripts": {
